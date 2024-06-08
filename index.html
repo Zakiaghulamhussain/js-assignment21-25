@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Mobile Phone Model</title>
+</head>
+<body>
+    <!---Question2-->
+    <h1>Enter Your Favorite Mobile Phone Model:</h1>
+    <input type="text" id="phoneModelInput">
+    <button onclick="displayLength()">Get Length</button>
+    <p id="lengthDisplay"></p>
+
+    <script>
+        function displayLength() {
+            var phoneModel = document.getElementById("phoneModelInput").value;
+            var length = phoneModel.length;
+            document.getElementById("lengthDisplay").innerText = "Length of your favorite mobile phone model: " + length;
+        }
+    </script>
+        <!---Question3--->
+     <h1>Find Index of Letter "n" in "Pakistani"</h1>
+
+      <!---Question4--->
+     <h1>Last Index of Letter "l" in "Hello World"</h1>
+     <p>The last index of letter "l" in the word "Hello World" is: <span id="indexDisplay"></span></p>
+ 
+     <script>
+         var word = "Hello World";
+         var lastIndex = word.lastIndexOf("l");
+         document.getElementById("indexDisplay").innerText = lastIndex;
+     </script>
+
+    <!---Question5--->
+    <h1>Character at 3rd Index in "Pakistani"</h1>
+    <p>The character at the 3rd index in the word "Pakistani" is: <span id="charDisplay"></span></p>
+
+    <script>
+        var word = "Pakistani";
+        var charAtIndex3 = word.charAt(3);
+        document.getElementById("charDisplay").innerText = charAtIndex3;
+    </script>
+
+  <!---Question6--->
+  <h1>Enter Your Favorite Mobile Phone Model:</h1>
+  <input type="text" id="phoneModelInput">
+  <button onclick="displayLength()">Get Length</button>
+  <p id="lengthDisplay"></p>
+
+  <script>
+      function displayLength() {
+          var phoneModel = document.getElementById("phoneModelInput").value;
+          var length = "".concat(phoneModel).length;
+          document.getElementById("lengthDisplay").innerText = "Length of your favorite mobile phone model: " + length;
+      }
+  </script>
+
+    <!---Question7--->
+    <h1>Replace "Hyder" with "Islam" in "Hyderabad"</h1>
+    <p>The modified word is: <span id="modifiedWordDisplay"></span></p>
+
+    <script>
+        var word = "Hyderabad";
+        var modifiedWord = word.replace("Hyder", "Islam");
+        document.getElementById("modifiedWordDisplay").innerText = modifiedWord;
+    </script>
+
+ <!---Question8--->
+ <h1>Replace "and" with "&"</h1>
+    <p>The modified message is: <span id="modifiedMessageDisplay"></span></p>
+
+    <script>
+        var message = "Ali and Sami are best friends. They play cricket and football together.";
+        var modifiedMessage = message.replace(/and/g, "&");
+        document.getElementById("modifiedMessageDisplay").innerText = modifiedMessage;
+    </script>
+
+ <!---Question9--->
+ <h1>String to Number Conversion</h1>
+    <p>Original String: "472"</p>
+    <p>Converted Number: <span id="convertedNumberDisplay"></span></p>
+    <p>Type of Original String: <span id="originalStringTypeDisplay"></span></p>
+    <p>Type of Converted Number: <span id="convertedNumberTypeDisplay"></span></p>
+
+    <script>
+        var originalString = "472";
+        var convertedNumber = Number(originalString);
+        document.getElementById("convertedNumberDisplay").innerText = convertedNumber;
+        document.getElementById("originalStringTypeDisplay").innerText = typeof originalString;
+        document.getElementById("convertedNumberTypeDisplay").innerText = typeof convertedNumber;
+    </script>
+
+
+ <!---Question10--->
+ <h1>Convert Input to Capital Letters</h1>
+ <label for="userInput">Enter your text:</label>
+ <input type="text" id="userInput">
+ <button onclick="convertToCapital()">Convert to Capital</button>
+ <p>Result: <span id="capitalOutput"></span></p>
+
+ <script>
+     function convertToCapital() {
+         var userInput = document.getElementById("userInput").value;
+         var capitalLetters = userInput.toUpperCase();
+         document.getElementById("capitalOutput").textContent = capitalLetters;
+     }
+ </script>
+
+
+ <!---Question11--->
+ <h1>Convert Input to Title Case</h1>
+ <label for="userInput">Enter your text:</label>
+ <input type="text" id="userInput">
+ <button onclick="convertToTitleCase()">Convert to Title Case</button>
+ <p>Result: <span id="titleCaseOutput"></span></p>
+
+ <script>
+     function convertToTitleCase() {
+         var userInput = document.getElementById("userInput").value;
+         var titleCase = userInput.toLowerCase().split(' ').map(function(word) {
+             return word.charAt(0).toUpperCase() + word.slice(1);
+         }).join(' ');
+         document.getElementById("titleCaseOutput").textContent = titleCase;
+     }
+ </script>
+
+<!---Question12--->
+    <h1>Convert Number to String and Remove Dot</h1>
+    <p>Original number: 35.36</p>
+    <button onclick="convertAndRemoveDot()">Convert and Remove Dot</button>
+    <p>Result: <span id="resultDisplay"></span></p>
+
+    <script>
+        function convertAndRemoveDot() {
+            var num = 35.36;
+            var numString = num.toString().replace('.', '');
+            document.getElementById("resultDisplay").textContent = numString;
+        }
+    </script>
+
+<!---Question13--->
+<h1>Username Validation</h1>
+    <label for="usernameInput">Enter your username:</label>
+    <input type="text" id="usernameInput">
+    <button onclick="validateUsername()">Submit</button>
+    <p id="validationMessage"></p>
+
+    <script>
+        function validateUsername() {
+            var username = document.getElementById("usernameInput").value;
+
+    
+            var specialSymbols = ['@', '.', ',', '!'];
+
+            var containsSpecialSymbol = false;
+            for (var i = 0; i < specialSymbols.length; i++) {
+                if (username.includes(specialSymbols[i])) {
+                    containsSpecialSymbol = true;
+                    break;
+                }
+            }
+            if (containsSpecialSymbol) {
+                document.getElementById("validationMessage").textContent = "Please enter a valid username without special symbols.";
+            } else {
+                document.getElementById("validationMessage").textContent = "Username is valid.";
+            }
+        }
+    </script>
+
+    <!---Question14--->
+    <h1>Search in Array</h1>
+    <label for="searchInput">Enter item to search:</label>
+    <input type="text" id="searchInput">
+    <button onclick="searchItem()">Search</button>
+    <p id="searchResult"></p>
+
+    <script>
+        // Define the array
+        var A = ["cake", "apple pie", "cookie", "chips", "patties"];
+
+        function searchItem() {
+            // Get user input and convert to lowercase for case-insensitive search
+            var searchInput = document.getElementById("searchInput").value.toLowerCase();
+
+            // Perform case-insensitive search
+            var found = false;
+            for (var i = 0; i < A.length; i++) {
+                if (A[i].toLowerCase() === searchInput) {
+                    found = true;
+                    break;
+                }
+            }
+
+            // Display search result
+            if (found) {
+                document.getElementById("searchResult").textContent = "Item '" + searchInput + "' is found in the list.";
+            } else {
+                document.getElementById("searchResult").textContent = "Item '" + searchInput + "' is not found in the list.";
+            }
+        }
+    </script>
+
+ <!---Question15--->
+ <h1>Password Validation</h1>
+    <label for="passwordInput">Enter your password:</label>
+    <input type="password" id="passwordInput">
+    <button onclick="validatePassword()">Submit</button>
+    <p id="validationMessage"></p>
+
+    <script>
+        function validatePassword() {
+            // Get user input
+            var password = document.getElementById("passwordInput").value;
+
+            // Check password requirements
+            if (password.length < 6 || /^\d/.test(password) || !/[a-zA-Z]/.test(password) || !/\d/.test(password)) {
+                // Display validation message if requirements are not met
+                document.getElementById("validationMessage").textContent = "Please enter a valid password.\n" +
+                    "It should contain alphabets and numbers, not start with a number, and be at least 6 characters long.";
+            } else {
+                // Password meets requirements
+                document.getElementById("validationMessage").textContent = "Password is valid.";
+            }
+        }
+    </script>
+     <!---Question16--->
+     <h1>String to Array Conversion</h1>
+     <p>The original string is: "University of Karachi"</p>
+     <button onclick="convertToArray()">Convert to Array</button>
+     <p id="arrayDisplay"></p>
+ 
+     <script>
+         function convertToArray() {
+             // Define the string
+             var university = "University of Karachi";
+ 
+             // Convert the string to an array using split method
+             var universityArray = university.split(' ');
+ 
+             // Display the elements of the array in the browser
+             document.getElementById("arrayDisplay").textContent = "Array elements: " + universityArray.join(', ');
+         }
+     </script>
+        <!---Question17--->
+        
+     
+
+    <script src="./app.js"></script>
+</body>
+</html>
